@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t hemu/fastapi-app:latest -f api/Dockerfile ./api
+         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest -f api/Dockerfile ./api
 
       - name: Push Docker image
-        run: docker push hemu/fastapi-app:latest
+          run: docker push ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest
